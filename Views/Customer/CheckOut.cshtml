@@ -1,0 +1,53 @@
+﻿@model IEnumerable<MultiTechWeb.Models.cart>
+
+@{
+    ViewBag.Title = "Check Out";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<br /><br /><br />
+
+<h1>Thank You for Shopping!!!  </h1>
+<br /><br /><br />
+<div>
+
+
+    <table>
+
+        <tr>
+            <th>Sr No</th>
+            <th>Item Name</th>
+            <th>Price</th>
+
+        </tr>
+
+        @foreach (var v in Model)
+        {
+
+
+            
+            <tr>
+
+
+                <td width="300px" align="center">@v.Id<br /></td>
+
+                <td width="300px" align="center">@v.Product<br /></td>
+
+
+                <td width="100px" align="center">Rs.@v.Price/=<br /></td>
+            </tr>
+
+
+        }
+        <tr> </tr>
+        <tr></tr>
+        <tr>
+            
+            <td width="100px" align="center"> Total</td>
+            <td align="right"100px"> Rs.@ViewBag.x1/= </td>
+
+        <tr>
+    </table>
+    <br /> <br />
+    </div>
+
+

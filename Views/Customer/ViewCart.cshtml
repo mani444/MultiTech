@@ -1,0 +1,58 @@
+﻿@model IEnumerable<MultiTechWeb.Models.cart>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<div class="main">
+
+        @foreach (var item in Model)
+        {
+            <div class="section group">
+                <div class="col_1_of_4 span_1_of_4">
+                    <div class="clear"></div>
+                    <h2>Product Name: @item.Product</h2>
+
+                    <h4 class="ui-icon-arrow-1-e"></h4>
+                    <ul>
+                        <li><a href="#">Price: @item.Price</a></li>
+                        <li><a href="#">Customer Name: @item.user</a></li>
+                        <li>
+                            <img id="myprod1" height="50" src="@item.image" alt="" /></li>
+                            
+                </div>
+            </div>
+        }
+
+    <table>
+    <tr>
+        <td width="100px" colspan="3" align="right"> Total Price is: </td>
+        <td align="center" width="100px"><span> Rs.@ViewBag.x/- </span></td>
+
+    <tr>
+
+        </table>
+
+        <br />
+
+    @using (Html.BeginForm("Index", "Customer"))
+    {
+        <div class="search"><div><button class="grey" type="submit">Continue Shopping</button></div></div>
+    }
+
+    @using (Html.BeginForm("CheckOut", "Customer", "method=post"))
+    {
+        <div class="search" ><div><button class="grey" type="submit">Check Out</button></div></div>
+    }
+
+    
+    <br />
+    <br />
+    <br />
+    <br />
+
+</div>
+
+
+            <div class="clear"></div>
+

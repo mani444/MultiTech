@@ -1,0 +1,38 @@
+﻿@model IEnumerable<MultiTechWeb.Models.Product>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<div class="main">
+    <div class="content">
+<div class="content_top">
+    <div class="heading">
+        <h3>Feature Products</h3>
+    </div>
+    </div>
+    <div class="section group">
+
+        @foreach (var item in Model)
+        {
+            <div class="grid_1_of_4 images_1_of_4">
+                @*<img class="fancybox" src="@s.image" alt="">*@
+
+                <a href="customer/addtocart/@item.PId"><img id="myprod1" height="150" src="@item.image" alt="" /></a>
+                
+                
+                <h2>Lorem Ipsum is simply </h2>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit</p>
+                <p><span class="strike">Rs. @item.Price</span><span class="price">Rs. @item.Price</span></p>
+                <div class="button"><span><img src="~/images/cart.jpg" alt="" /><a href="customer/addtocart/@item.PId" class="cart-button">Add to Cart</a></span> </div>
+                <div class="button"><span><a href="customer/addtocart/@item.PId" class="details">Details</a></span></div>
+            </div>
+
+    
+        }
+
+
+    </div>
+        </div></div>
+    <div class="clear"></div>
+
